@@ -95,6 +95,19 @@ private const SPD: number[] = [
 
 
   // --- Serialized UI Properties ---
+
+  @serializeProperty
+  private splash_title: APJS.SceneObject; // Reference to the splash title object in the scene
+  @serializeProperty
+  private splash_win: APJS.SceneObject; // Reference to the "You win!" splash object in the scene
+  @serializeProperty
+  private splash_lose: APJS.SceneObject; // Reference to the "You lose!" splash object in the scene
+  @serializeProperty
+  private splash_draw: APJS.SceneObject; // Reference to the "Draw!" splash object in the scene
+  @serializeProperty
+  private splash_shade: APJS.SceneObject; // Reference to the dark shade object used in splash screens for better text visibility
+
+
   @serializeProperty
   private button_hit: APJS.SceneObject; // Reference to the "Hit" button in the scene
   @serializeProperty
@@ -168,6 +181,9 @@ private const SPD: number[] = [
     if (this.uiCamera) {
       this.actualCamera = this.uiCamera.getComponent("Camera") as APJS.Camera;
     }
+
+    if (this.splash_title) this.splash_title.enabled = true; //display title screen on start
+    if (this.splash_shade) this.splash_shade.enabled = true; // Enable the dark shade for better text visibility on the title screen
 
     if (this.card_backside) {
       this.card_backside.enabled = false;
@@ -302,6 +318,17 @@ private const SPD: number[] = [
 
   private onTouchEvent = (event: APJS.IEvent) => {
     const touchData = event.args[0] as APJS.TouchData;
+    if (!touchData) return;
+
+    if (this.isSplashScreenActive()) {
+      // Only allow dismissing splash screens on a new tap, not on move/end phases.
+      if (touchData.phase === APJS.TouchPhase.Began) {
+        this.disableSplashscreens();
+        this.resetGame();
+      }
+      return;
+    }
+
     if (touchData.phase === APJS.TouchPhase.Began) {
       const normalizedTouch = new APJS.Vector2f(
         touchData.position.x,
@@ -364,7 +391,8 @@ private const SPD: number[] = [
       this.isPlayersTurn = false;
       this.isDealersTurn = false;
       // Optionally, trigger some end game UI here
-      this.displayBust();
+      this.displayLose();
+      this.isGameOver = true;
     }
 
   }
@@ -426,18 +454,34 @@ private const SPD: number[] = [
     //this.resetGame();
   }
 
-  private displayBust() {
-    // Optionally change text color or show "Bust!" message
-    
-  }
   private displayWin() {
-    // Optionally show "You Win!" message
+    if (this.splash_shade) this.splash_shade.enabled = true; // Enable the dark shade for better text visibility
+    if(this.splash_win) this.splash_win.enabled = true;
   }
   private displayLose() {
-    // Optionally show "You Lose!" message
+    if (this.splash_shade) this.splash_shade.enabled = true; // Enable the dark shade for better text visibility
+    if(this.splash_lose) this.splash_lose.enabled = true;
   }
   private displayDraw() {
-    // Optionally show "Draw!" message
+    if (this.splash_shade) this.splash_shade.enabled = true; // Enable the dark shade for better text visibility
+    if(this.splash_draw) this.splash_draw.enabled = true;
+  }
+
+  private isSplashScreenActive(): boolean {
+    return (
+      (this.splash_win && this.splash_win.enabled) ||
+      (this.splash_lose && this.splash_lose.enabled) ||
+      (this.splash_draw && this.splash_draw.enabled) ||
+      (this.splash_title && this.splash_title.enabled)
+    );
+  }
+
+  private disableSplashscreens() {
+    if (this.splash_title) this.splash_title.enabled = false;
+    if(this.splash_win) this.splash_win.enabled = false;
+    if(this.splash_lose) this.splash_lose.enabled = false;
+    if(this.splash_draw) this.splash_draw.enabled = false;
+    if (this.splash_shade) this.splash_shade.enabled = false; // Disable the dark shade when hiding splash screens
   }
 
 

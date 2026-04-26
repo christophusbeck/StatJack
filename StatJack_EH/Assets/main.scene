@@ -67,7 +67,7 @@ entities:
         enabled: true
         sharedMaterials:
           - {localId: 1, path: 880c2e18-0793-dba5-14d1-ef8411086a42--880c2e18-0793-dba5-14d1-ef8411086a42.material}
-        sortingOrder: 1
+        sortingOrder: 16
         autoSortingOrder: true
         useFrustumCulling: true
         receiveShadow: true
@@ -147,7 +147,7 @@ entities:
         name: !<str> ""
         guid: {a: 5551602919525492782, b: 5651416391142074802}
         enabled: true
-        sortingOrder: 2
+        sortingOrder: 1
         autoSortingOrder: true
         useFrustumCulling: true
         receiveShadow: true
@@ -187,7 +187,7 @@ entities:
         name: !<str> ""
         guid: {a: 5629939147616365746, b: 12784590185378937011}
         enabled: true
-        sortingOrder: 3
+        sortingOrder: 2
         autoSortingOrder: true
         useFrustumCulling: true
         receiveShadow: true
@@ -227,7 +227,7 @@ entities:
         name: !<str> ""
         guid: {a: 5242389888634443025, b: 5446892262165737145}
         enabled: true
-        sortingOrder: 4
+        sortingOrder: 3
         autoSortingOrder: true
         useFrustumCulling: true
         receiveShadow: true
@@ -267,7 +267,7 @@ entities:
         name: !<str> ""
         guid: {a: 5758976345946199522, b: 12889496441948241296}
         enabled: true
-        sortingOrder: 5
+        sortingOrder: 4
         autoSortingOrder: true
         useFrustumCulling: true
         receiveShadow: true
@@ -307,7 +307,7 @@ entities:
         name: !<str> ""
         guid: {a: 4925127400494064662, b: 16696107900668768688}
         enabled: true
-        sortingOrder: 6
+        sortingOrder: 5
         autoSortingOrder: true
         useFrustumCulling: true
         receiveShadow: true
@@ -374,7 +374,7 @@ entities:
             _verticalAlignment: 1
             textLocale: 1
         enabled: true
-        sortingOrder: 7
+        sortingOrder: 6
         autoSortingOrder: true
         useFrustumCulling: true
         receiveShadow: true
@@ -489,7 +489,7 @@ entities:
             _verticalAlignment: 1
             textLocale: 1
         enabled: true
-        sortingOrder: 8
+        sortingOrder: 7
         autoSortingOrder: true
         useFrustumCulling: true
         receiveShadow: true
@@ -604,7 +604,7 @@ entities:
             _verticalAlignment: 1
             textLocale: 1
         enabled: true
-        sortingOrder: 9
+        sortingOrder: 8
         autoSortingOrder: true
         useFrustumCulling: true
         receiveShadow: true
@@ -728,7 +728,7 @@ entities:
         name: !<str> ""
         guid: {a: 5532784042591748703, b: 5208798754488844934}
         enabled: true
-        sortingOrder: 12
+        sortingOrder: 11
         autoSortingOrder: true
         useFrustumCulling: true
         receiveShadow: true
@@ -768,7 +768,7 @@ entities:
         name: !<str> ""
         guid: {a: 5689595179557546667, b: 9696106053056725154}
         enabled: true
-        sortingOrder: 15
+        sortingOrder: 14
         autoSortingOrder: true
         useFrustumCulling: true
         receiveShadow: true
@@ -808,7 +808,7 @@ entities:
         name: !<str> ""
         guid: {a: 5478989154214673188, b: 14734340334206976681}
         enabled: true
-        sortingOrder: 10
+        sortingOrder: 9
         autoSortingOrder: true
         useFrustumCulling: true
         receiveShadow: true
@@ -848,7 +848,7 @@ entities:
         name: !<str> ""
         guid: {a: 5107733047279395691, b: 15987457639621594020}
         enabled: true
-        sortingOrder: 13
+        sortingOrder: 12
         autoSortingOrder: true
         useFrustumCulling: true
         receiveShadow: true
@@ -912,7 +912,7 @@ entities:
         name: !<str> ""
         guid: {a: 4733238142574844580, b: 5298940590113688974}
         enabled: true
-        sortingOrder: 11
+        sortingOrder: 10
         autoSortingOrder: true
         useFrustumCulling: true
         receiveShadow: true
@@ -952,7 +952,7 @@ entities:
         name: !<str> ""
         guid: {a: 4793845220562448384, b: 3984125977138025386}
         enabled: true
-        sortingOrder: 14
+        sortingOrder: 13
         autoSortingOrder: true
         useFrustumCulling: true
         receiveShadow: true
@@ -1000,11 +1000,18 @@ entities:
             animDuration: 0.5
             button_hit: {localId: 9}
             button_stand: {localId: 10}
-            card_object: {localId: 37}
+            card_backside: {localId: 37}
+            card_dealer_front: {localId: 39}
+            card_player_front: {localId: 38}
             dealer_poke_sprite: {localId: 43}
             final_dealer: {x: 0, y: 385}
             final_player: {x: 0, y: 170}
             player_poke_sprite: {localId: 40}
+            splash_draw: {localId: 46}
+            splash_lose: {localId: 47}
+            splash_shade: {localId: 50}
+            splash_title: {localId: 48}
+            splash_win: {localId: 49}
             sprite_array_dealer: {localId: 1, path: 522b5fcb-cd54-5589-3609-b742e02e00ed}
             sprite_array_player: {localId: 1, path: ee44756f-b1a4-b3eb-85a8-c9cdd405360b}
             startPos: {x: -205, y: -100}
@@ -1038,6 +1045,206 @@ entities:
         rendererType:
           __class: RendererType
           value: OpenGLES30
+    layer: 0
+  - __class: Entity
+    name: !<str> splash_draw
+    guid: {a: 5255651311802852027, b: 10175767740219074701}
+    scene: {localId: 1}
+    selfvisible: false
+    components:
+      - {localId: 46}
+      - __class: ImageRenderer
+        name: !<str> ""
+        guid: {a: 4932687315552208166, b: 5456994199821884052}
+        enabled: true
+        sortingOrder: 17
+        autoSortingOrder: true
+        useFrustumCulling: true
+        receiveShadow: true
+        lightProbeBlendMode:
+          __class: LightProbeBlendMode
+          value: OFF
+        entirePingPong: false
+        texture: {localId: 1, path: b0125a16-65a9-371a-63a7-e90d17ce9302--b0125a16-65a9-371a-63a7-e90d17ce9302.png}
+        opacity: 1
+        color: {r: 1, g: 1, b: 1, a: 1}
+        size: {x: 10, y: 10}
+        pivot: {x: 0.5, y: 0.5}
+        flipX: false
+        flipY: false
+        stretchMode:
+          __class: ImageStretchMode
+          value: Fit
+        atlasIndex: 0
+        imageMaterialProperties:
+          __class: Map
+          _ellipseX: 1
+          _ellipseY: 1
+          _filledRange: 1
+          _filledType: 0
+          _startPoint: 0
+        batchingEnabled: false
+        reservedField: {x: -1, y: -1, z: -1, w: -1}
+    layer: 0
+  - __class: Entity
+    name: !<str> splash_lose
+    guid: {a: 4681809982566264512, b: 14890537224906774693}
+    scene: {localId: 1}
+    selfvisible: false
+    components:
+      - {localId: 47}
+      - __class: ImageRenderer
+        name: !<str> ""
+        guid: {a: 5758179604281702547, b: 1141404858336211346}
+        enabled: true
+        sortingOrder: 18
+        autoSortingOrder: true
+        useFrustumCulling: true
+        receiveShadow: true
+        lightProbeBlendMode:
+          __class: LightProbeBlendMode
+          value: OFF
+        entirePingPong: false
+        texture: {localId: 1, path: e2a3b29e-ac63-057a-90d6-44383a3e837f--e2a3b29e-ac63-057a-90d6-44383a3e837f.png}
+        opacity: 1
+        color: {r: 1, g: 1, b: 1, a: 1}
+        size: {x: 10, y: 10}
+        pivot: {x: 0.5, y: 0.5}
+        flipX: false
+        flipY: false
+        stretchMode:
+          __class: ImageStretchMode
+          value: Fit
+        atlasIndex: 0
+        imageMaterialProperties:
+          __class: Map
+          _ellipseX: 1
+          _ellipseY: 1
+          _filledRange: 1
+          _filledType: 0
+          _startPoint: 0
+        batchingEnabled: false
+        reservedField: {x: -1, y: -1, z: -1, w: -1}
+    layer: 0
+  - __class: Entity
+    name: !<str> splash_title
+    guid: {a: 4627397210750753925, b: 11546700637842286011}
+    scene: {localId: 1}
+    selfvisible: false
+    components:
+      - {localId: 48}
+      - __class: ImageRenderer
+        name: !<str> ""
+        guid: {a: 5139318826441380594, b: 9431343734726373043}
+        enabled: true
+        sortingOrder: 19
+        autoSortingOrder: true
+        useFrustumCulling: true
+        receiveShadow: true
+        lightProbeBlendMode:
+          __class: LightProbeBlendMode
+          value: OFF
+        entirePingPong: false
+        texture: {localId: 1, path: 557a8c11-ffe9-3370-0dea-18978b06f898--557a8c11-ffe9-3370-0dea-18978b06f898.png}
+        opacity: 1
+        color: {r: 1, g: 1, b: 1, a: 1}
+        size: {x: 10, y: 10}
+        pivot: {x: 0.5, y: 0.5}
+        flipX: false
+        flipY: false
+        stretchMode:
+          __class: ImageStretchMode
+          value: Fit
+        atlasIndex: 0
+        imageMaterialProperties:
+          __class: Map
+          _ellipseX: 1
+          _ellipseY: 1
+          _filledRange: 1
+          _filledType: 0
+          _startPoint: 0
+        batchingEnabled: false
+        reservedField: {x: -1, y: -1, z: -1, w: -1}
+    layer: 0
+  - __class: Entity
+    name: !<str> splash_win
+    guid: {a: 5126730440585815056, b: 14950343200112441730}
+    scene: {localId: 1}
+    selfvisible: false
+    components:
+      - {localId: 49}
+      - __class: ImageRenderer
+        name: !<str> ""
+        guid: {a: 5656925683494397464, b: 13414639549223198887}
+        enabled: true
+        sortingOrder: 20
+        autoSortingOrder: true
+        useFrustumCulling: true
+        receiveShadow: true
+        lightProbeBlendMode:
+          __class: LightProbeBlendMode
+          value: OFF
+        entirePingPong: false
+        texture: {localId: 1, path: f6ef89d1-b2a5-3712-5097-d5d82fc6f61b--f6ef89d1-b2a5-3712-5097-d5d82fc6f61b.png}
+        opacity: 1
+        color: {r: 1, g: 1, b: 1, a: 1}
+        size: {x: 10, y: 10}
+        pivot: {x: 0.5, y: 0.5}
+        flipX: false
+        flipY: false
+        stretchMode:
+          __class: ImageStretchMode
+          value: Fit
+        atlasIndex: 0
+        imageMaterialProperties:
+          __class: Map
+          _ellipseX: 1
+          _ellipseY: 1
+          _filledRange: 1
+          _filledType: 0
+          _startPoint: 0
+        batchingEnabled: false
+        reservedField: {x: -1, y: -1, z: -1, w: -1}
+    layer: 0
+  - __class: Entity
+    name: !<str> shade
+    guid: {a: 5463959232434232905, b: 4360296323118985118}
+    scene: {localId: 1}
+    selfvisible: true
+    components:
+      - {localId: 50}
+      - __class: ImageRenderer
+        name: !<str> ""
+        guid: {a: 5698358568149343635, b: 2795080677767046589}
+        enabled: true
+        sortingOrder: 15
+        autoSortingOrder: true
+        useFrustumCulling: true
+        receiveShadow: true
+        lightProbeBlendMode:
+          __class: LightProbeBlendMode
+          value: OFF
+        entirePingPong: false
+        texture: {localId: 1, path: 9a160e39-9dc2-776c-05b1-8121269e1725--9a160e39-9dc2-776c-05b1-8121269e1725.png}
+        opacity: 0.300000011920929
+        color: {r: 1, g: 1, b: 1, a: 1}
+        size: {x: 10, y: 10}
+        pivot: {x: 0.5, y: 0.5}
+        flipX: false
+        flipY: false
+        stretchMode:
+          __class: ImageStretchMode
+          value: Fit
+        atlasIndex: 0
+        imageMaterialProperties:
+          __class: Map
+          _ellipseX: 1
+          _ellipseY: 1
+          _filledRange: 1
+          _filledType: 0
+          _startPoint: 0
+        batchingEnabled: false
+        reservedField: {x: -1, y: -1, z: -1, w: -1}
     layer: 0
 visible: true
 config:
@@ -1080,7 +1287,7 @@ localScale: {x: 1, y: 1, z: 1}
 localOrientation: {w: 1, x: 0, y: 0, z: 0}
 parent: {localId: 4}
 children:
-  - {localId: 6}
+  - {localId: 7}
   - {localId: 9}
   - {localId: 10}
   - {localId: 11}
@@ -1095,6 +1302,12 @@ children:
   - {localId: 39}
   - {localId: 43}
   - {localId: 37}
+  - {localId: 50}
+  - {localId: 6}
+  - {localId: 46}
+  - {localId: 47}
+  - {localId: 48}
+  - {localId: 49}
 mobility:
   __class: Mobility
   value: Dynamic
@@ -1107,7 +1320,6 @@ localScale: {x: 1, y: 1, z: 1}
 localOrientation: {w: 1, x: 0, y: 0, z: 0}
 parent: {localId: 5}
 children:
-  - {localId: 7}
   - {localId: 8}
 mobility:
   __class: Mobility
@@ -1122,10 +1334,10 @@ enablePivotMatrix: false
 name: !<str> ""
 guid: {a: 5153582723009620378, b: 13378766088385358737}
 enabled: true
-localPosition: {x: 0, y: 0, z: 0}
+localPosition: {x: 0, y: 0, z: -40}
 localScale: {x: 1, y: 1, z: 1}
 localOrientation: {w: 1, x: 0, y: 0, z: 0}
-parent: {localId: 6}
+parent: {localId: 5}
 mobility:
   __class: Mobility
   value: Dynamic
@@ -1156,14 +1368,14 @@ enablePivotMatrix: false
 name: !<str> ""
 guid: {a: 5514298372475080329, b: 17989043903552680087}
 enabled: true
-localPosition: {x: 8.125, y: -5.46875, z: -40}
+localPosition: {x: 8.125, y: -7.03125, z: -40}
 localScale: {x: 1, y: 1, z: 1}
 localOrientation: {w: 1, x: 0, y: 0, z: 0}
 parent: {localId: 5}
 mobility:
   __class: Mobility
   value: Dynamic
-anchoredPosition: {x: -100, y: 465}
+anchoredPosition: {x: -100, y: 415}
 sizeDelta: {x: 200, y: 170}
 pivot: {x: 0.5, y: 0.5}
 anchors: {x: 1, y: 1, z: 0, w: 0}
@@ -2103,3 +2315,88 @@ parent: {localId: 44}
 mobility:
   __class: Mobility
   value: Dynamic
+--- !ScreenTransform &46
+name: !<str> ""
+guid: {a: 4974874555028028289, b: 13247846226923080581}
+enabled: true
+localPosition: {x: 0, y: 0, z: -40}
+localScale: {x: 1, y: 1, z: 1}
+localOrientation: {w: 1, x: 0, y: 0, z: 0}
+parent: {localId: 5}
+mobility:
+  __class: Mobility
+  value: Dynamic
+anchoredPosition: {x: 0, y: 0}
+sizeDelta: {x: 720, y: 1280}
+pivot: {x: 0.5, y: 0.5}
+anchors: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+pixelsPerUnit: 32
+enablePivotMatrix: false
+--- !ScreenTransform &47
+name: !<str> ""
+guid: {a: 5708404614811360587, b: 14735721397792604604}
+enabled: true
+localPosition: {x: 0, y: 0, z: -40}
+localScale: {x: 1, y: 1, z: 1}
+localOrientation: {w: 1, x: 0, y: 0, z: 0}
+parent: {localId: 5}
+mobility:
+  __class: Mobility
+  value: Dynamic
+anchoredPosition: {x: 0, y: 0}
+sizeDelta: {x: 720, y: 1280}
+pivot: {x: 0.5, y: 0.5}
+anchors: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+pixelsPerUnit: 32
+enablePivotMatrix: false
+--- !ScreenTransform &48
+name: !<str> ""
+guid: {a: 5514742215886983182, b: 9555479604516994705}
+enabled: true
+localPosition: {x: 0, y: 0, z: -40}
+localScale: {x: 1, y: 1, z: 1}
+localOrientation: {w: 1, x: 0, y: 0, z: 0}
+parent: {localId: 5}
+mobility:
+  __class: Mobility
+  value: Dynamic
+anchoredPosition: {x: 0, y: 0}
+sizeDelta: {x: 720, y: 1280}
+pivot: {x: 0.5, y: 0.5}
+anchors: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+pixelsPerUnit: 32
+enablePivotMatrix: false
+--- !ScreenTransform &49
+name: !<str> ""
+guid: {a: 5528902795720495065, b: 3709363095469834148}
+enabled: true
+localPosition: {x: 0, y: 0, z: -40}
+localScale: {x: 1, y: 1, z: 1}
+localOrientation: {w: 1, x: 0, y: 0, z: 0}
+parent: {localId: 5}
+mobility:
+  __class: Mobility
+  value: Dynamic
+anchoredPosition: {x: 0, y: 0}
+sizeDelta: {x: 720, y: 1280}
+pivot: {x: 0.5, y: 0.5}
+anchors: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+pixelsPerUnit: 32
+enablePivotMatrix: false
+--- !ScreenTransform &50
+name: !<str> ""
+guid: {a: 5758634144362730203, b: 7451009798528892807}
+enabled: true
+localPosition: {x: 0, y: 0, z: -40}
+localScale: {x: 1, y: 1, z: 1}
+localOrientation: {w: 1, x: 0, y: 0, z: 0}
+parent: {localId: 5}
+mobility:
+  __class: Mobility
+  value: Dynamic
+anchoredPosition: {x: 0, y: 0}
+sizeDelta: {x: 720, y: 1280}
+pivot: {x: 0.5, y: 0.5}
+anchors: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+pixelsPerUnit: 32
+enablePivotMatrix: false

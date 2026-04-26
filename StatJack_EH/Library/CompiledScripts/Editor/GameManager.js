@@ -119,6 +119,16 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
         this.animTimer = 0;
         this.onTouchEvent = (event) => {
             const touchData = event.args[0];
+            if (!touchData)
+                return;
+            if (this.isSplashScreenActive()) {
+                // Only allow dismissing splash screens on a new tap, not on move/end phases.
+                if (touchData.phase === APJS.TouchPhase.Began) {
+                    this.disableSplashscreens();
+                    this.resetGame();
+                }
+                return;
+            }
             if (touchData.phase === APJS.TouchPhase.Began) {
                 const normalizedTouch = new APJS.Vector2f(touchData.position.x, 1 - touchData.position.y);
                 if (this.isTouchingObject(normalizedTouch, this.button_hit)) {
@@ -138,6 +148,10 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
         if (this.uiCamera) {
             this.actualCamera = this.uiCamera.getComponent("Camera");
         }
+        if (this.splash_title)
+            this.splash_title.enabled = true; //display title screen on start
+        if (this.splash_shade)
+            this.splash_shade.enabled = true; // Enable the dark shade for better text visibility on the title screen
         if (this.card_backside) {
             this.card_backside.enabled = false;
             const st = this.card_backside.getComponent("ScreenTransform");
@@ -288,7 +302,8 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
             this.isPlayersTurn = false;
             this.isDealersTurn = false;
             // Optionally, trigger some end game UI here
-            this.displayBust();
+            this.displayLose();
+            this.isGameOver = true;
         }
     }
     handleStand() {
@@ -346,22 +361,66 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
         }
         //this.resetGame();
     }
-    displayBust() {
-        // Optionally change text color or show "Bust!" message
-    }
     displayWin() {
-        // Optionally show "You Win!" message
+        if (this.splash_shade)
+            this.splash_shade.enabled = true; // Enable the dark shade for better text visibility
+        if (this.splash_win)
+            this.splash_win.enabled = true;
     }
     displayLose() {
-        // Optionally show "You Lose!" message
+        if (this.splash_shade)
+            this.splash_shade.enabled = true; // Enable the dark shade for better text visibility
+        if (this.splash_lose)
+            this.splash_lose.enabled = true;
     }
     displayDraw() {
-        // Optionally show "Draw!" message
+        if (this.splash_shade)
+            this.splash_shade.enabled = true; // Enable the dark shade for better text visibility
+        if (this.splash_draw)
+            this.splash_draw.enabled = true;
+    }
+    isSplashScreenActive() {
+        return ((this.splash_win && this.splash_win.enabled) ||
+            (this.splash_lose && this.splash_lose.enabled) ||
+            (this.splash_draw && this.splash_draw.enabled) ||
+            (this.splash_title && this.splash_title.enabled));
+    }
+    disableSplashscreens() {
+        if (this.splash_title)
+            this.splash_title.enabled = false;
+        if (this.splash_win)
+            this.splash_win.enabled = false;
+        if (this.splash_lose)
+            this.splash_lose.enabled = false;
+        if (this.splash_draw)
+            this.splash_draw.enabled = false;
+        if (this.splash_shade)
+            this.splash_shade.enabled = false; // Disable the dark shade when hiding splash screens
     }
     onDestroy() {
         APJS.EventManager.getGlobalEmitter().off(APJS.EventType.Touch, this.onTouchEvent);
     }
 };
+__decorate([
+    serializeSceneObjectFlag,
+    serializeProperty
+], GameManager.prototype, "splash_title", void 0);
+__decorate([
+    serializeSceneObjectFlag,
+    serializeProperty
+], GameManager.prototype, "splash_win", void 0);
+__decorate([
+    serializeSceneObjectFlag,
+    serializeProperty
+], GameManager.prototype, "splash_lose", void 0);
+__decorate([
+    serializeSceneObjectFlag,
+    serializeProperty
+], GameManager.prototype, "splash_draw", void 0);
+__decorate([
+    serializeSceneObjectFlag,
+    serializeProperty
+], GameManager.prototype, "splash_shade", void 0);
 __decorate([
     serializeSceneObjectFlag,
     serializeProperty
