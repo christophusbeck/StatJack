@@ -1,6 +1,6 @@
 {
   "name": "",
-  "lastModified": "Sun, 26 Apr 2026 15:42:30 GMT",
+  "lastModified": "Sun, 26 Apr 2026 16:19:27 GMT",
   "version": "5.9.1",
   "renderNames": {
     "0": "Default Layer",
@@ -68,9 +68,9 @@
     "62": "Layer 62",
     "63": "Layer 63"
   },
-  "durationToCreate": 30822597,
-  "durationCreation": 31089357,
-  "durationBackground": 21467177,
+  "durationToCreate": 33039764,
+  "durationCreation": 33306524,
+  "durationBackground": 22719000,
   "effectHint": "",
   "templateID": "templateID_none",
   "overwriteBuiltinGAN": 1,
@@ -99,5 +99,7 @@
   "selectedIdList": [
     "amz:Guid(4721942295226637158, 11701775012169097865)"
   ],
-  "lastSceneView": 0
+  "lastSceneView": 0,
+  "effectSize": 7673554,
+  "effectPackagePath": "C:\\Users\\realh\\AppData\\Roaming\\EffectHouse\\Instances\\Instance1\\Submit\\package\\effect.zip"
 }

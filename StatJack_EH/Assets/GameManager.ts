@@ -165,6 +165,7 @@ private const SPD: number[] = [
   private MAX_SCORE: number = 500;
   private DEALER_THRESHOLD: number = 400;
   private statArray = this.HP //default
+  private alreadyDrawnPokemon: Set<number> = new Set(); // To track already drawn Pokémon and avoid duplicates
   
 
 
@@ -206,6 +207,7 @@ private const SPD: number[] = [
     this.isPlayersTurn = true;
     this.isDealersTurn = false;
     this.isGameOver = false;
+    this.alreadyDrawnPokemon.clear(); // Reset the set of drawn Pokémon for a new game
 
     this.statUsedForGame = Math.floor(Math.random() * 6); //pick a random stat to base game on
     
@@ -279,7 +281,8 @@ private const SPD: number[] = [
     if (st) st.anchoredPosition = this.startPos;
     this.card_backside.enabled = false;
 
-      if (this.isDealersTurn) {
+      if (this.isDealersTurn && !this.isGameOver) {
+        this.checkDealerOutcome
         this.dealerTurn();
       }
   }
@@ -364,6 +367,16 @@ private const SPD: number[] = [
     }
   }
 
+  private drawPokemonNoRepeats(): number {
+    let dex_num: number;
+    do {
+      dex_num = Math.floor(Math.random() * 151) + 1;
+    } while (this.alreadyDrawnPokemon.has(dex_num));
+    
+    this.alreadyDrawnPokemon.add(dex_num);
+    return dex_num;
+  }
+
 
   private handleHit() {
     if (this.isAnimatingCard || this.isDealersTurn || this.isGameOver) return;
@@ -376,7 +389,7 @@ private const SPD: number[] = [
     if (this.player_poke_sprite && this.player_poke_sprite.enabled == false) this.player_poke_sprite.enabled = true;
     //if (this.dealer_poke_sprite && this.dealer_poke_sprite.enabled == false) this.dealer_poke_sprite.enabled = true;
 
-    const dex_num = Math.floor(Math.random() * 151) + 1;
+    const dex_num = this.drawPokemonNoRepeats();
     //this.playerScore =dex_num;
 
     // Use the player-specific sprite array
@@ -390,7 +403,7 @@ private const SPD: number[] = [
       // Player hits the max score exactly, player wins
       this.isPlayersTurn = false;
       this.isDealersTurn = false;
-      // Optionally, trigger some end game UI here
+      
       this.displayWin();
       this.isGameOver = true;
     }
@@ -419,12 +432,13 @@ private const SPD: number[] = [
   private dealerTurn() {
     if (this.isAnimatingCard) return;
     this.checkDealerOutcome();
+    if (this.isGameOver) return; // Don't draw another card if game already ended
 
     //make card and sprite visible on the first dealer turn for the animation
     if (this.card_dealer_front && this.card_dealer_front.enabled == false) this.card_dealer_front.enabled = true;
     if (this.dealer_poke_sprite && this.dealer_poke_sprite.enabled == false) this.dealer_poke_sprite.enabled = true;
 
-    const dex_num = Math.floor(Math.random() * 151) + 1;
+    const dex_num = this.drawPokemonNoRepeats();
     this.dealerScore += this.statArray[dex_num];
     this.triggerCardAnimation(this.final_dealer);
     // Use the dealer-specific sprite array
