@@ -1,0 +1,32 @@
+[
+  {
+    "guid": {
+      "a": "093114cf-6cdc-7b12-50de-cfecb3da0912",
+      "b": ""
+    },
+    "extraType": "ResItemPNGImage",
+    "name": "table",
+    "version": "0.2.0",
+    "rttiType": "Texture",
+    "authorizationInfo": "",
+    "extendedInfo": {
+      "isVisibleInInspector": true,
+      "hideInPanel": false,
+      "expandInPanel": false
+    },
+    "compressionType": 0,
+    "compressQuality": 0,
+    "compressMaxResolution": 512,
+    "enableMipmap": false,
+    "filterMin": 1,
+    "filterMag": 1,
+    "filterMipmap": 0,
+    "wrapModeS": 0,
+    "wrapModeT": 0,
+    "wrapModeR": 0,
+    "premultiplyAlpha": false,
+    "objGuid": "",
+    "resourceFilePath": "C:\\Users\\realh\\Documents\\TikTok_Filters\\Assets\\table.jpg",
+    "references": []
+  }
+]

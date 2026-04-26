@@ -1,0 +1,26 @@
+[
+  {
+    "guid": {
+      "a": "ee44756f-b1a4-b3eb-85a8-c9cdd405360b",
+      "b": ""
+    },
+    "extraType": "ResItemAnimatedTexture",
+    "name": "sprites_player",
+    "version": "0.2.0",
+    "rttiType": "Texture",
+    "authorizationInfo": "",
+    "extendedInfo": {
+      "isVisibleInInspector": true,
+      "hideInPanel": false,
+      "expandInPanel": false
+    },
+    "objGuid": "",
+    "resourceFilePath": "C:\\Users\\realh\\AppData\\Local\\Effect House\\Resources\\BuiltinResource\\assets\\jsAssets\\default.animTex",
+    "references": [
+      {
+        "guid": "215a775a-9119-0dac-7b2e-b3bd23816c14",
+        "propertyName": "textureSequence"
+      }
+    ]
+  }
+]

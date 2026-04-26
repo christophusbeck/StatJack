@@ -1,0 +1,32 @@
+[
+  {
+    "guid": {
+      "a": "e2a3b29e-ac63-057a-90d6-44383a3e837f",
+      "b": ""
+    },
+    "extraType": "ResItemPNGImage",
+    "name": "splash_lose",
+    "version": "0.2.0",
+    "rttiType": "Texture",
+    "authorizationInfo": "",
+    "extendedInfo": {
+      "isVisibleInInspector": true,
+      "hideInPanel": false,
+      "expandInPanel": false
+    },
+    "compressionType": 0,
+    "compressQuality": 0,
+    "compressMaxResolution": 512,
+    "enableMipmap": false,
+    "filterMin": 1,
+    "filterMag": 1,
+    "filterMipmap": 0,
+    "wrapModeS": 0,
+    "wrapModeT": 0,
+    "wrapModeR": 0,
+    "premultiplyAlpha": false,
+    "objGuid": "",
+    "resourceFilePath": "C:\\Users\\realh\\Documents\\TikTok_Filters\\Assets\\splash_lose.png",
+    "references": []
+  }
+]

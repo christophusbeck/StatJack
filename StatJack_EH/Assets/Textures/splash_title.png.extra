@@ -1,0 +1,32 @@
+[
+  {
+    "guid": {
+      "a": "557a8c11-ffe9-3370-0dea-18978b06f898",
+      "b": ""
+    },
+    "extraType": "ResItemPNGImage",
+    "name": "splash_title",
+    "version": "0.2.0",
+    "rttiType": "Texture",
+    "authorizationInfo": "",
+    "extendedInfo": {
+      "isVisibleInInspector": true,
+      "hideInPanel": false,
+      "expandInPanel": false
+    },
+    "compressionType": 0,
+    "compressQuality": 0,
+    "compressMaxResolution": 512,
+    "enableMipmap": false,
+    "filterMin": 1,
+    "filterMag": 1,
+    "filterMipmap": 0,
+    "wrapModeS": 0,
+    "wrapModeT": 0,
+    "wrapModeR": 0,
+    "premultiplyAlpha": false,
+    "objGuid": "",
+    "resourceFilePath": "C:\\Users\\realh\\Documents\\TikTok_Filters\\Assets\\splash_title.png",
+    "references": []
+  }
+]

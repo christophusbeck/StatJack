@@ -1,0 +1,32 @@
+[
+  {
+    "guid": {
+      "a": "ec78ec39-2c12-9748-edf4-77743131a94e",
+      "b": ""
+    },
+    "extraType": "ResItemPNGImage",
+    "name": "sign",
+    "version": "0.2.0",
+    "rttiType": "Texture",
+    "authorizationInfo": "",
+    "extendedInfo": {
+      "isVisibleInInspector": true,
+      "hideInPanel": false,
+      "expandInPanel": false
+    },
+    "compressionType": 0,
+    "compressQuality": 0,
+    "compressMaxResolution": 512,
+    "enableMipmap": false,
+    "filterMin": 1,
+    "filterMag": 1,
+    "filterMipmap": 0,
+    "wrapModeS": 0,
+    "wrapModeT": 0,
+    "wrapModeR": 0,
+    "premultiplyAlpha": false,
+    "objGuid": "",
+    "resourceFilePath": "C:\\Users\\realh\\Documents\\TikTok_Filters\\Assets\\sign.png",
+    "references": []
+  }
+]

@@ -1,6 +1,6 @@
 {
   "name": "",
-  "lastModified": "Sun, 26 Apr 2026 07:10:04 GMT",
+  "lastModified": "Sun, 26 Apr 2026 08:22:33 GMT",
   "version": "5.9.1",
   "renderNames": {
     "0": "Default Layer",
@@ -68,9 +68,9 @@
     "62": "Layer 62",
     "63": "Layer 63"
   },
-  "durationToCreate": 76414,
-  "durationCreation": 343174,
-  "durationBackground": 88,
+  "durationToCreate": 4425862,
+  "durationCreation": 4692622,
+  "durationBackground": 1621826,
   "effectHint": "",
   "templateID": "templateID_none",
   "overwriteBuiltinGAN": 1,
@@ -95,5 +95,9 @@
     "resourceUrl": "./BuiltinResource/preview/video/preview_face/idle/1person_faceidle_1.mp4"
   },
   "fromNewUserGuide": false,
-  "soundStartTime": 0
+  "soundStartTime": 0,
+  "selectedIdList": [
+    "amz:Guid(5731926241805666800, 10002742227064407454)"
+  ],
+  "lastSceneView": 0
 }

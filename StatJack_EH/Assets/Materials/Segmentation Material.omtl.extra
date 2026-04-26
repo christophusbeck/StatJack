@@ -1,0 +1,32 @@
+[
+  {
+    "guid": {
+      "a": "880c2e18-0793-dba5-14d1-ef8411086a42",
+      "b": ""
+    },
+    "extraType": "ResItemMaterialOmtl",
+    "name": "Segmentation Material",
+    "version": "0.6.0",
+    "rttiType": "Material",
+    "authorizationInfo": "",
+    "extendedInfo": {
+      "isVisibleInInspector": true,
+      "hideInPanel": false,
+      "expandInPanel": false
+    },
+    "objGuid": "",
+    "resourceFilePath": "C:\\Users\\realh\\AppData\\Local\\Effect House\\Plugins\\SegmentationTexture@1.0.10\\resources\\materials\\Default_Segmentation_Material.omtl",
+    "references": [
+      {
+        "propertyName": "_SegTex",
+        "guid": "8ea21506-0a08-07b7-6b13-d34ce8916a61"
+      },
+      {
+        "propertyName": "_MainTex",
+        "guid": "00000000-0000-0000-0000-000000001544"
+      }
+    ],
+    "skinObjGuid": "Guid(5161583310506153150, 3458443182116268433)",
+    "currAuslVersion": "1.0.0"
+  }
+]

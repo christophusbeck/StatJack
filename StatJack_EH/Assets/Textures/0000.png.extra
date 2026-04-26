@@ -1,0 +1,32 @@
+[
+  {
+    "guid": {
+      "a": "77af4d28-ae62-93ab-282d-2f2e2ada7b33",
+      "b": ""
+    },
+    "extraType": "ResItemPNGImage",
+    "name": "0000",
+    "version": "0.2.0",
+    "rttiType": "Texture",
+    "authorizationInfo": "",
+    "extendedInfo": {
+      "isVisibleInInspector": true,
+      "hideInPanel": false,
+      "expandInPanel": false
+    },
+    "compressionType": 0,
+    "compressQuality": 0,
+    "compressMaxResolution": 512,
+    "enableMipmap": false,
+    "filterMin": 1,
+    "filterMag": 1,
+    "filterMipmap": 0,
+    "wrapModeS": 0,
+    "wrapModeT": 0,
+    "wrapModeR": 0,
+    "premultiplyAlpha": false,
+    "objGuid": "",
+    "resourceFilePath": "C:\\Users\\realh\\Documents\\TikTok_Filters\\Assets\\pokemon\\0000.png",
+    "references": []
+  }
+]

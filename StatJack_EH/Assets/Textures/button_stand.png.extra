@@ -1,0 +1,32 @@
+[
+  {
+    "guid": {
+      "a": "d33e3c7f-bff8-c73d-3cb9-cfa1997cf651",
+      "b": ""
+    },
+    "extraType": "ResItemPNGImage",
+    "name": "button_stand",
+    "version": "0.2.0",
+    "rttiType": "Texture",
+    "authorizationInfo": "",
+    "extendedInfo": {
+      "isVisibleInInspector": true,
+      "hideInPanel": false,
+      "expandInPanel": false
+    },
+    "compressionType": 0,
+    "compressQuality": 0,
+    "compressMaxResolution": 512,
+    "enableMipmap": false,
+    "filterMin": 1,
+    "filterMag": 1,
+    "filterMipmap": 0,
+    "wrapModeS": 0,
+    "wrapModeT": 0,
+    "wrapModeR": 0,
+    "premultiplyAlpha": false,
+    "objGuid": "",
+    "resourceFilePath": "C:\\Users\\realh\\Documents\\TikTok_Filters\\Assets\\button_stand.png",
+    "references": []
+  }
+]

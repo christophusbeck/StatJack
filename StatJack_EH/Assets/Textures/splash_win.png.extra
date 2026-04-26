@@ -1,0 +1,32 @@
+[
+  {
+    "guid": {
+      "a": "f6ef89d1-b2a5-3712-5097-d5d82fc6f61b",
+      "b": ""
+    },
+    "extraType": "ResItemPNGImage",
+    "name": "splash_win",
+    "version": "0.2.0",
+    "rttiType": "Texture",
+    "authorizationInfo": "",
+    "extendedInfo": {
+      "isVisibleInInspector": true,
+      "hideInPanel": false,
+      "expandInPanel": false
+    },
+    "compressionType": 0,
+    "compressQuality": 0,
+    "compressMaxResolution": 512,
+    "enableMipmap": false,
+    "filterMin": 1,
+    "filterMag": 1,
+    "filterMipmap": 0,
+    "wrapModeS": 0,
+    "wrapModeT": 0,
+    "wrapModeR": 0,
+    "premultiplyAlpha": false,
+    "objGuid": "",
+    "resourceFilePath": "C:\\Users\\realh\\Documents\\TikTok_Filters\\Assets\\splash_win.png",
+    "references": []
+  }
+]
