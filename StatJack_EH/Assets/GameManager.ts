@@ -146,7 +146,8 @@ private const SPD: number[] = [
   private playerTextComp: APJS.Text;
   private dealerTextComp: APJS.Text;
   private isPlayersTurn: boolean = true;
-  private isDealersTurn: boolean = false; 
+  private isDealersTurn: boolean = false;
+  private isGameOver: boolean = false; 
   private statUsedForGame: number = 0; //0 = HP, 1 =ATK, ...
   private MAX_SCORE: number = 500;
   private DEALER_THRESHOLD: number = 400;
@@ -188,6 +189,7 @@ private const SPD: number[] = [
     this.dealerScore = 0;
     this.isPlayersTurn = true;
     this.isDealersTurn = false;
+    this.isGameOver = false;
 
     this.statUsedForGame = Math.floor(Math.random() * 6); //pick a random stat to base game on
     
@@ -219,7 +221,7 @@ private const SPD: number[] = [
       const statNames = ["HP", "ATK", "DEF", "SP.ATK", "SP.DEF", "SPEED"];
       const chosenStat = statNames[this.statUsedForGame] || "Unknown";
       const textComp = this.text_stat.getComponent("Text") as APJS.Text;
-      if(textComp) textComp.text = "Stat: " + chosenStat;
+      if(textComp) textComp.text = chosenStat;
     }
 
 
@@ -337,7 +339,7 @@ private const SPD: number[] = [
 
 
   private handleHit() {
-    if (this.isAnimatingCard || this.isDealersTurn) return;
+    if (this.isAnimatingCard || this.isDealersTurn || this.isGameOver) return;
 
     this.triggerCardAnimation(this.final_player);
 
@@ -368,7 +370,7 @@ private const SPD: number[] = [
   }
 
   private handleStand() {
-    if (this.isAnimatingCard || this.isDealersTurn) return;
+    if (this.isAnimatingCard || this.isDealersTurn || this.isGameOver) return;
     this.isDealersTurn = true;
     this.isPlayersTurn = false;
     this.dealerTurn();
@@ -400,6 +402,8 @@ private const SPD: number[] = [
       this.isDealersTurn = false;
       // Optionally, trigger some end game UI here
       this.displayWin();
+
+      this.isGameOver = true;
     }
     else if (this.dealerScore >= this.DEALER_THRESHOLD) {
       // Dealer stands, determine winner
@@ -408,12 +412,15 @@ private const SPD: number[] = [
       if (this.dealerScore > this.playerScore) {
         // Dealer wins
         this.displayLose();
+        this.isGameOver = true;
       } else if (this.dealerScore < this.playerScore) {
         // Player wins
         this.displayWin();
+        this.isGameOver = true;
       } else {
         // Tie
         this.displayDraw();
+        this.isGameOver = true;
       }
     }
     //this.resetGame();

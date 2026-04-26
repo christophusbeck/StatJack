@@ -110,6 +110,7 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
         this.dealerScore = 0;
         this.isPlayersTurn = true;
         this.isDealersTurn = false;
+        this.isGameOver = false;
         this.statUsedForGame = 0; //0 = HP, 1 =ATK, ...
         this.MAX_SCORE = 500;
         this.DEALER_THRESHOLD = 400;
@@ -151,6 +152,7 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
         this.dealerScore = 0;
         this.isPlayersTurn = true;
         this.isDealersTurn = false;
+        this.isGameOver = false;
         this.statUsedForGame = Math.floor(Math.random() * 6); //pick a random stat to base game on
         switch (this.statUsedForGame) {
             case 0:
@@ -193,7 +195,7 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
             const chosenStat = statNames[this.statUsedForGame] || "Unknown";
             const textComp = this.text_stat.getComponent("Text");
             if (textComp)
-                textComp.text = "Stat: " + chosenStat;
+                textComp.text = chosenStat;
         }
     }
     onUpdate(deltaTime) {
@@ -265,7 +267,7 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
         }
     }
     handleHit() {
-        if (this.isAnimatingCard || this.isDealersTurn)
+        if (this.isAnimatingCard || this.isDealersTurn || this.isGameOver)
             return;
         this.triggerCardAnimation(this.final_player);
         //make card and sprite visible on the first player turn for the animation
@@ -290,7 +292,7 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
         }
     }
     handleStand() {
-        if (this.isAnimatingCard || this.isDealersTurn)
+        if (this.isAnimatingCard || this.isDealersTurn || this.isGameOver)
             return;
         this.isDealersTurn = true;
         this.isPlayersTurn = false;
@@ -320,6 +322,7 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
             this.isDealersTurn = false;
             // Optionally, trigger some end game UI here
             this.displayWin();
+            this.isGameOver = true;
         }
         else if (this.dealerScore >= this.DEALER_THRESHOLD) {
             // Dealer stands, determine winner
@@ -328,14 +331,17 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
             if (this.dealerScore > this.playerScore) {
                 // Dealer wins
                 this.displayLose();
+                this.isGameOver = true;
             }
             else if (this.dealerScore < this.playerScore) {
                 // Player wins
                 this.displayWin();
+                this.isGameOver = true;
             }
             else {
                 // Tie
                 this.displayDraw();
+                this.isGameOver = true;
             }
         }
         //this.resetGame();
