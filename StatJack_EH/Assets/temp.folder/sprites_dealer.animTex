@@ -1,0 +1,50 @@
+%YAML 1.1
+--- !TextureDelegate &1
+name: !<str> sprites_player (1)
+guid: {a: 4874829635991954204, b: 18140227324350078905}
+serializedProperty:
+  __class: ScriptSerializedProperty
+  name: !<str> ""
+  guid: {a: 5702251519237504147, b: 16650803572701504657}
+  properties:
+    __class: Map
+    JSClassName: !<str> AnimatedTextureProvider
+    duration: 12.66666666666667
+    fps: 12
+    loopCount: -1
+    playMode: 0
+    reverse: false
+    textureSequence: {localId: 1, path: 215a775a-9119-0dac-7b2e-b3bd23816c14--215a775a-9119-0dac-7b2e-b3bd23816c14.seq}
+width: 391
+height: 391
+depth: 1
+internalFormat:
+  __class: InternalFormat
+  value: RGBA8
+dataType:
+  __class: DataType
+  value: U8norm
+builtinType:
+  __class: BuiltInTextureType
+  value: NORAML
+enableMipmap: true
+filterMin:
+  __class: FilterMode
+  value: LINEAR
+filterMag:
+  __class: FilterMode
+  value: LINEAR
+filterMipmap:
+  __class: FilterMipmapMode
+  value: NONE
+wrapModeS:
+  __class: WrapMode
+  value: CLAMP
+wrapModeT:
+  __class: WrapMode
+  value: CLAMP
+wrapModeR:
+  __class: WrapMode
+  value: CLAMP
+maxAnisotropy: 1
+internalTexture: {localId: 1, path: Library/Artifact/215a775a-9119-0dac-7b2e-b3bd23816c14/88.png}

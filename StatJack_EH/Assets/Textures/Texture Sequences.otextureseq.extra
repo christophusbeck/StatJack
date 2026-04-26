@@ -14,8 +14,8 @@
       "hideInPanel": false,
       "expandInPanel": false
     },
-    "compressionType": 0,
-    "compressQuality": 0,
+    "compressionType": 1,
+    "compressQuality": 1,
     "compressMaxResolution": 512,
     "premultiplyAlpha": false,
     "objGuid": "",

@@ -1,0 +1,41 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6
+    },
+    "rules": {
+        "no-eval": 2,
+        "no-new-func": 2,
+        "no-new-wrappers": 2,
+        "no-restricted-syntax": [
+            "error",
+            {
+                "selector": "AssignmentExpression[left.object.object.type='Identifier'][left.object.object.name=/^(Object|String|Number|Boolean|Symbol|BigInt|Function|Date|RegExp|Array|Error|Promise|Map|Set|WeakMap|WeakSet|Intl|Math|JSON|Reflect|Proxy|ArrayBuffer)$/][left.object.property.name='prototype']",
+                "message": "Modifying or accessing the prototype of built-in types is not allowed."
+            },
+            {
+                "selector": "CallExpression[arguments.length>0] > Identifier[name=/^(Object|String|Number|Boolean|Symbol|BigInt|Function|Date|RegExp|Array|Error|Promise|Map|Set|WeakMap|WeakSet|Intl|Math|JSON|Reflect|Proxy|ArrayBuffer)$/]",
+                "message": "Do not pass built-in objects to functions that modify their prototype."
+            },
+            {
+                "selector": "VariableDeclarator[init.name=/^(Object|String|Number|Boolean|Symbol|BigInt|Function|Date|RegExp|Array|Error|Promise|Map|Set|WeakMap|WeakSet|Intl|Math|JSON|Reflect|Proxy|ArrayBuffer)$/]",
+                "message": "Assigning built-in objects to variables is not allowed."
+            },
+            {
+                "selector": "AssignmentExpression[left.type='Identifier'][left.name=/^(Object|String|Number|Boolean|Symbol|BigInt|Function|Date|RegExp|Array|Error|Promise|Map|Set|WeakMap|WeakSet|Intl|Math|JSON|Reflect|Proxy|ArrayBuffer)$/]",
+                "message": "Reassigning built-in objects is not allowed."
+            },
+            {
+                "selector": "CallExpression[callee.object.name='Object'][callee.property.name='defineProperty'][arguments.0.type='Identifier'][arguments.0.name=/^(Object|String|Number|Boolean|Symbol|BigInt|Function|Date|RegExp|Array|Error|Promise|Map|Set|WeakMap|WeakSet|Intl|Math|JSON|Reflect|Proxy|ArrayBuffer)$/]",
+                "message": "Object.defineProperty should not be used with the first argument being a JS built-in object."
+            },
+            {
+                "selector": "CallExpression[callee.object.name='Object'][callee.property.name='defineProperties'][arguments.0.type='Identifier'][arguments.0.name=/^(Object|String|Number|Boolean|Symbol|BigInt|Function|Date|RegExp|Array|Error|Promise|Map|Set|WeakMap|WeakSet|Intl|Math|JSON|Reflect|Proxy|ArrayBuffer)$/]",
+                "message": "Object.defineProperties should not be used with the first argument being a JS built-in object."
+            },
+            {
+                "selector": "CallExpression[callee.object.name='Object'][callee.property.name='setPrototypeOf'][arguments.0.type='Identifier'][arguments.0.name=/^(Object|String|Number|Boolean|Symbol|BigInt|Function|Date|RegExp|Array|Error|Promise|Map|Set|WeakMap|WeakSet|Intl|Math|JSON|Reflect|Proxy|ArrayBuffer)$/]",
+                "message": "Object.setPrototypeOf should not be used with the first argument being a JS built-in object."
+            }
+        ]
+    }
+}

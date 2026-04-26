@@ -9,8 +9,8 @@ serializedProperty:
   properties:
     __class: Map
     JSClassName: !<str> AnimatedTextureProvider
-    duration: 12.66666666666667
-    fps: 12
+    duration: 152
+    fps: 1
     loopCount: -1
     playMode: 0
     reverse: false

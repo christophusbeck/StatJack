@@ -1,7 +1,7 @@
 [
   {
     "guid": {
-      "a": "bc8e679a-917d-2c68-3b6a-0091a06fe01f",
+      "a": "522b5fcb-cd54-5589-3609-b742e02e00ed",
       "b": ""
     },
     "extraType": "ResItemAnimatedTexture",
@@ -18,7 +18,7 @@
     "resourceFilePath": "C:\\Users\\realh\\AppData\\Local\\Effect House\\Resources\\BuiltinResource\\assets\\jsAssets\\default.animTex",
     "references": [
       {
-        "guid": "215a775a-9119-0dac-7b2e-b3bd23816c14",
+        "guid": "2b17381e-8518-dd25-a1b2-734eeee5d266",
         "propertyName": "textureSequence"
       }
     ]

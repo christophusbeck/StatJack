@@ -1,0 +1,26 @@
+[
+  {
+    "guid": {
+      "a": "bc8e679a-917d-2c68-3b6a-0091a06fe01f",
+      "b": ""
+    },
+    "extraType": "ResItemAnimatedTexture",
+    "name": "sprites_dealer",
+    "version": "0.2.0",
+    "rttiType": "Texture",
+    "authorizationInfo": "",
+    "extendedInfo": {
+      "isVisibleInInspector": true,
+      "hideInPanel": false,
+      "expandInPanel": false
+    },
+    "objGuid": "",
+    "resourceFilePath": "C:\\Users\\realh\\AppData\\Local\\Effect House\\Resources\\BuiltinResource\\assets\\jsAssets\\default.animTex",
+    "references": [
+      {
+        "guid": "215a775a-9119-0dac-7b2e-b3bd23816c14",
+        "propertyName": "textureSequence"
+      }
+    ]
+  }
+]

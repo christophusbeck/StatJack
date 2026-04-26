@@ -1,0 +1,25 @@
+[
+  {
+    "guid": {
+      "a": "2b17381e-8518-dd25-a1b2-734eeee5d266",
+      "b": ""
+    },
+    "extraType": "ResItemTextureSequence",
+    "name": "Texture Sequences (1)",
+    "version": "0.2.0",
+    "rttiType": "TextureSequence",
+    "authorizationInfo": "",
+    "extendedInfo": {
+      "isVisibleInInspector": true,
+      "hideInPanel": false,
+      "expandInPanel": false
+    },
+    "compressionType": 1,
+    "compressQuality": 1,
+    "compressMaxResolution": 512,
+    "premultiplyAlpha": false,
+    "objGuid": "",
+    "resourceFilePath": "C:\\Users\\realh\\Documents\\TikTok_Filters_GitHub\\StatJack\\StatJack_EH\\Assets\\Textures\\Texture Sequences (1).otextureseq",
+    "references": []
+  }
+]

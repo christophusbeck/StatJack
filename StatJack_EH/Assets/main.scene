@@ -1005,7 +1005,7 @@ entities:
             final_dealer: {x: 0, y: 385}
             final_player: {x: 0, y: 170}
             player_poke_sprite: {localId: 40}
-            sprite_array_dealer: {localId: 1, path: Assets/Animated Textures/sprites_player (1).animTex}
+            sprite_array_dealer: {localId: 1, path: 522b5fcb-cd54-5589-3609-b742e02e00ed}
             sprite_array_player: {localId: 1, path: ee44756f-b1a4-b3eb-85a8-c9cdd405360b}
             startPos: {x: -205, y: -100}
             text_dealer: {localId: 15}
