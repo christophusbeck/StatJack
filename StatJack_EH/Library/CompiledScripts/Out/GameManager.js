@@ -295,6 +295,14 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
         this.setSpriteFrame(this.player_poke_sprite, dex_num, this.sprite_array_player);
         this.playerScore += this.statArray[dex_num];
         this.updateUI();
+        if (this.playerScore == this.MAX_SCORE) {
+            // Player hits the max score exactly, player wins
+            this.isPlayersTurn = false;
+            this.isDealersTurn = false;
+            // Optionally, trigger some end game UI here
+            this.displayWin();
+            this.isGameOver = true;
+        }
         if (this.playerScore > this.MAX_SCORE) {
             // Player busts, dealer wins
             this.isPlayersTurn = false;

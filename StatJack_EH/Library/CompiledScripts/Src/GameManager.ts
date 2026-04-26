@@ -402,6 +402,15 @@ private const SPD: number[] = [
     
     this.updateUI();
 
+    if(this.playerScore == this.MAX_SCORE){
+      // Player hits the max score exactly, player wins
+      this.isPlayersTurn = false;
+      this.isDealersTurn = false;
+      // Optionally, trigger some end game UI here
+      this.displayWin();
+      this.isGameOver = true;
+    }
+
     if (this.playerScore > this.MAX_SCORE) {
       // Player busts, dealer wins
       this.isPlayersTurn = false;
