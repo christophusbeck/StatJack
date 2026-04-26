@@ -1136,134 +1136,6 @@
   },
   {
     "guid": {
-      "a": "f5b4dbef-7821-f188-82f6-fabb4c5b28a8",
-      "b": ""
-    },
-    "objGuid": "Guid(5540847658392490114, 5515781419604506756)",
-    "extraType": "Entity",
-    "name": "2D Foreground",
-    "version": "0.1.0",
-    "rttiType": "SceneObject",
-    "expanded": true,
-    "type": "none",
-    "isAnimatorBound": false,
-    "modelGUID": "",
-    "createdEffectNodeKey": "",
-    "disableSelection": false,
-    "hiddenInHierarchy": false,
-    "editorTags": []
-  },
-  {
-    "guid": {
-      "a": "e524f357-472b-208e-e7b0-19133dd54ed5",
-      "b": ""
-    },
-    "objGuid": "Guid(5746552520022550052, 17155134337684914609)",
-    "extraType": "Transform",
-    "name": "Transform",
-    "version": "0.1.0",
-    "rttiType": "Transform",
-    "editable": true,
-    "_lazyUpgrateVersion": "0.0.0",
-    "extendedInfo": {
-      "isVisibleInInspector": true,
-      "expanded": true
-    },
-    "eulerAngle": [
-      0,
-      0,
-      0
-    ],
-    "linkage": 0
-  },
-  {
-    "guid": {
-      "a": "66cd6860-abcc-d6fa-bcbd-c802cae192cf",
-      "b": ""
-    },
-    "objGuid": "Guid(5672433813856213953, 8097794670269026176)",
-    "extraType": "EffectNode",
-    "name": "Render Group",
-    "version": "0.1.0",
-    "rttiType": "EffectNode",
-    "editable": true,
-    "_lazyUpgrateVersion": "0.0.0",
-    "extendedInfo": {
-      "isVisibleInInspector": true,
-      "expanded": true
-    },
-    "type": 6,
-    "sortMethod": 1,
-    "enableInputTexture": false,
-    "inputTexture": "00000000-0000-0000-0000-00000000004b"
-  },
-  {
-    "guid": {
-      "a": "bde99692-5c04-2f1f-ab1b-8a17d85f5fcc",
-      "b": ""
-    },
-    "objGuid": "Guid(5084029705815476193, 2852684429983994772)",
-    "extraType": "Entity",
-    "name": "2D Camera",
-    "version": "0.1.0",
-    "rttiType": "SceneObject",
-    "expanded": true,
-    "type": "none",
-    "isAnimatorBound": false,
-    "modelGUID": "",
-    "createdEffectNodeKey": "effect_node_2D_foreground",
-    "disableSelection": false,
-    "hiddenInHierarchy": false,
-    "editorTags": []
-  },
-  {
-    "guid": {
-      "a": "84d41868-0702-c899-e401-bf099085ee71",
-      "b": ""
-    },
-    "objGuid": "Guid(5354042187608445954, 8478992662810738060)",
-    "extraType": "Transform",
-    "name": "Transform",
-    "version": "0.1.0",
-    "rttiType": "Transform",
-    "editable": true,
-    "_lazyUpgrateVersion": "0.0.0",
-    "extendedInfo": {
-      "isVisibleInInspector": true,
-      "expanded": true
-    },
-    "eulerAngle": [
-      0,
-      0,
-      0
-    ],
-    "linkage": 0
-  },
-  {
-    "guid": {
-      "a": "ab549749-c59a-568b-34dc-24ed52edcf73",
-      "b": ""
-    },
-    "objGuid": "Guid(5763136695678603547, 6257627200893409167)",
-    "extraType": "Camera",
-    "name": "Camera",
-    "version": "0.4.0",
-    "rttiType": "Camera",
-    "editable": true,
-    "_lazyUpgrateVersion": "0.0.0",
-    "extendedInfo": {
-      "isVisibleInInspector": true,
-      "expanded": true
-    },
-    "enableMask": false,
-    "maskTexture": "00000000-0000-0000-0000-000000000802",
-    "physicalFovy": false,
-    "fov": 60,
-    "cachedInputTexture": "00000000-0000-0000-0000-00000000004b",
-    "isAnimatorBound": false
-  },
-  {
-    "guid": {
       "a": "26525688-1fe7-8f97-387f-4a247938672c",
       "b": ""
     },
@@ -1399,5 +1271,128 @@
     "ellipseX": 1,
     "ellipseY": 1,
     "alphaNOPM": true
+  },
+  {
+    "guid": {
+      "a": "07dfd6fe-79c4-2687-c2c7-945deeb12fa0",
+      "b": ""
+    },
+    "objGuid": "Guid(4669989201682749278, 8591374670496617627)",
+    "extraType": "Entity",
+    "name": "General",
+    "version": "0.1.0",
+    "rttiType": "SceneObject",
+    "expanded": true,
+    "type": "none",
+    "isAnimatorBound": false,
+    "modelGUID": "",
+    "createdEffectNodeKey": "",
+    "disableSelection": false,
+    "hiddenInHierarchy": false,
+    "editorTags": []
+  },
+  {
+    "guid": {
+      "a": "6f0f930e-e7c4-b75d-c813-22f8ebf28be4",
+      "b": ""
+    },
+    "objGuid": "Guid(5238172795898986732, 5699113123625585041)",
+    "extraType": "Transform",
+    "name": "Transform",
+    "version": "0.1.0",
+    "rttiType": "Transform",
+    "editable": true,
+    "_lazyUpgrateVersion": "0.0.0",
+    "extendedInfo": {
+      "isVisibleInInspector": true,
+      "expanded": true
+    },
+    "eulerAngle": [
+      0,
+      0,
+      0
+    ],
+    "linkage": 0
+  },
+  {
+    "guid": {
+      "a": "8ec0a883-77ec-fdfe-52f7-e597d82a2bac",
+      "b": ""
+    },
+    "objGuid": "Guid(5126200664040818005, 8356234225264247476)",
+    "extraType": "EffectNode",
+    "name": "Render Group",
+    "version": "0.1.0",
+    "rttiType": "EffectNode",
+    "editable": true,
+    "_lazyUpgrateVersion": "0.0.0",
+    "extendedInfo": {
+      "isVisibleInInspector": true,
+      "expanded": true
+    },
+    "type": 5,
+    "sortMethod": 2,
+    "enableInputTexture": false,
+    "inputTexture": "00000000-0000-0000-0000-00000000004b"
+  },
+  {
+    "guid": {
+      "a": "77a32b05-46b1-18ea-190a-a92b95f32ae1",
+      "b": ""
+    },
+    "objGuid": "Guid(4914413380865926485, 8439326177013677970)",
+    "extraType": "Entity",
+    "name": "GameManager",
+    "version": "0.1.0",
+    "rttiType": "SceneObject",
+    "expanded": true,
+    "type": "none",
+    "isAnimatorBound": false,
+    "modelGUID": "",
+    "createdEffectNodeKey": "effect_node_utility",
+    "disableSelection": false,
+    "hiddenInHierarchy": false,
+    "editorTags": []
+  },
+  {
+    "guid": {
+      "a": "a6923f64-7e0b-69d0-b8a4-253fc370f3a4",
+      "b": ""
+    },
+    "objGuid": "Guid(5444856767850669202, 748818996944002442)",
+    "extraType": "Transform",
+    "name": "Transform",
+    "version": "0.1.0",
+    "rttiType": "Transform",
+    "editable": true,
+    "_lazyUpgrateVersion": "0.0.0",
+    "extendedInfo": {
+      "isVisibleInInspector": true,
+      "expanded": true
+    },
+    "eulerAngle": [
+      0,
+      0,
+      0
+    ],
+    "linkage": 0
+  },
+  {
+    "guid": {
+      "a": "150ea224-4ec5-511c-2d75-9b8c70a504bd",
+      "b": ""
+    },
+    "objGuid": "Guid(5449916359313916383, 15261430714443892143)",
+    "extraType": "UserComponentEditor",
+    "name": "GameManager",
+    "version": "0.1.0",
+    "rttiType": "GameManager",
+    "editable": true,
+    "_lazyUpgrateVersion": "0.1.0",
+    "extendedInfo": {
+      "isVisibleInInspector": true,
+      "expanded": true
+    },
+    "resGuid": "a2b22859-f2ac-ff3a-b398-1e2451899c27"
   }
 ]

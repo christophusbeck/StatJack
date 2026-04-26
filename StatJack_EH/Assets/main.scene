@@ -6,30 +6,6 @@ editSceneGuid: {a: 0, b: 0}
 calibrateVer: !<str> V5
 entities:
   - __class: Entity
-    name: !<str> Segmentation Effects
-    guid: {a: 5394112700538375653, b: 10963820782823615625}
-    scene: {localId: 1}
-    selfvisible: true
-    components:
-      - {localId: 4}
-      - __class: EffectNode
-        name: !<str> ""
-        guid: {a: 5012757351725515306, b: 683838492359282606}
-        enabled: true
-        algorithmInput: {localId: 1, path: share://input.texture}
-        outputTextures:
-          - {localId: 1, path: 00000000-0000-0000-0000-000000000009}
-        renderOrder: 2750
-        minorOrder: 0
-        type:
-          __class: EffectNodeTag
-          value: Other
-        version: 2
-        rendererType:
-          __class: RendererType
-          value: OpenGLES30
-    layer: 0
-  - __class: Entity
     name: !<str> 2D Camera
     guid: {a: 5547775419720021120, b: 13947603720037377193}
     scene: {localId: 1}
@@ -902,20 +878,20 @@ entities:
         reservedField: {x: -1, y: -1, z: -1, w: -1}
     layer: 0
   - __class: Entity
-    name: !<str> 2D Foreground
-    guid: {a: 5540847658392490114, b: 5515781419604506756}
+    name: !<str> General
+    guid: {a: 4669989201682749278, b: 8591374670496617627}
     scene: {localId: 1}
     selfvisible: true
     components:
-      - {localId: 41}
+      - {localId: 44}
       - __class: EffectNode
         name: !<str> ""
-        guid: {a: 5672433813856213953, b: 8097794670269026176}
+        guid: {a: 5126200664040818005, b: 8356234225264247476}
         enabled: true
         algorithmInput: {localId: 1, path: share://input.texture}
         outputTextures:
           - {localId: 1, path: 00000000-0000-0000-0000-000000000009}
-        renderOrder: 9001
+        renderOrder: 8001
         minorOrder: 0
         type:
           __class: EffectNodeTag
@@ -924,47 +900,6 @@ entities:
         rendererType:
           __class: RendererType
           value: OpenGLES30
-    layer: 0
-  - __class: Entity
-    name: !<str> 2D Camera
-    guid: {a: 5084029705815476193, b: 2852684429983994772}
-    scene: {localId: 1}
-    selfvisible: true
-    components:
-      - {localId: 42}
-      - __class: Camera
-        name: !<str> ""
-        guid: {a: 5763136695678603547, b: 6257627200893409167}
-        enabled: true
-        layerVisibleMask: {__class: DynamicBitset, numBits: 64, values: [1, 0]}
-        renderOrder: 0
-        type:
-          __class: CameraType
-          value: ORTHO
-        clearColor: {r: 0, g: 0, b: 0, a: 1}
-        clearType:
-          __class: CameraClearType
-          value: DEPTH
-        alwaysClear: true
-        viewport: {x: 0, y: 0, w: 1, h: 1}
-        fovy: 60
-        fovType:
-          __class: CameraFovType
-          value: CUSTOM
-        orthoScale: 20
-        fitMode:
-          __class: CameraFitMode
-          value: FILL
-        zNear: 0.1000000014901161
-        zFar: 1000
-        renderTexture: {localId: 1, path: 00000000-0000-0000-0000-000000000009}
-        isRootCamera: false
-        sortMethod:
-          __class: CameraSortMethod
-          value: STRICT_SORT_ORDER
-        rtBackupMode:
-          __class: CameraRTBackupMode
-          value: CAMERA_CHANGED
     layer: 0
   - __class: Entity
     name: !<str> sprite_player
@@ -1045,6 +980,64 @@ entities:
           _startPoint: 0
         batchingEnabled: false
         reservedField: {x: -1, y: -1, z: -1, w: -1}
+    layer: 0
+  - __class: Entity
+    name: !<str> GameManager
+    guid: {a: 4914413380865926485, b: 8439326177013677970}
+    scene: {localId: 1}
+    selfvisible: true
+    components:
+      - {localId: 45}
+      - __class: DynamicComponent
+        name: !<str> ""
+        guid: {a: 5449916359313916383, b: 15261430714443892143}
+        serializedProperty:
+          __class: ScriptSerializedProperty
+          name: !<str> ""
+          guid: {a: 5226483265500503888, b: 13469430744743319452}
+          properties:
+            __class: Map
+            animDuration: 0.5
+            button_hit: {localId: 9}
+            button_stand: {localId: 10}
+            card_object: {localId: 37}
+            dealer_poke_sprite: {localId: 43}
+            final_dealer: {x: 0, y: 385}
+            final_player: {x: 0, y: 170}
+            player_poke_sprite: {localId: 40}
+            sprite_array_dealer: {localId: 1, path: Assets/Animated Textures/sprites_player (1).animTex}
+            sprite_array_player: {localId: 1, path: ee44756f-b1a4-b3eb-85a8-c9cdd405360b}
+            startPos: {x: -205, y: -100}
+            text_dealer: {localId: 15}
+            text_player: {localId: 22}
+            text_stat: {localId: 29}
+            uiCamera: {localId: 5}
+        enabled: true
+        className: !<str> a2b22859-f2ac-ff3a-b398-1e2451899c27
+    layer: 0
+  - __class: Entity
+    name: !<str> Segmentation Effects
+    guid: {a: 5394112700538375653, b: 10963820782823615625}
+    scene: {localId: 1}
+    selfvisible: true
+    components:
+      - {localId: 4}
+      - __class: EffectNode
+        name: !<str> ""
+        guid: {a: 5012757351725515306, b: 683838492359282606}
+        enabled: true
+        algorithmInput: {localId: 1, path: share://input.texture}
+        outputTextures:
+          - {localId: 1, path: 00000000-0000-0000-0000-000000000009}
+        renderOrder: 8002
+        minorOrder: 0
+        type:
+          __class: EffectNodeTag
+          value: Other
+        version: 2
+        rendererType:
+          __class: RendererType
+          value: OpenGLES30
     layer: 0
 visible: true
 config:
@@ -2070,29 +2063,6 @@ pivot: {x: 0.5, y: 0.5}
 anchors: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
 pixelsPerUnit: 32
 enablePivotMatrix: false
---- !Transform &41
-name: !<str> ""
-guid: {a: 5746552520022550052, b: 17155134337684914609}
-enabled: true
-localPosition: {x: 0, y: 0, z: 0}
-localScale: {x: 1, y: 1, z: 1}
-localOrientation: {w: 1, x: 0, y: 0, z: 0}
-children:
-  - {localId: 42}
-mobility:
-  __class: Mobility
-  value: Dynamic
---- !Transform &42
-name: !<str> ""
-guid: {a: 5354042187608445954, b: 8478992662810738060}
-enabled: true
-localPosition: {x: 0, y: 0, z: 40}
-localScale: {x: 1, y: 1, z: 1}
-localOrientation: {w: 1, x: 0, y: 0, z: 0}
-parent: {localId: 41}
-mobility:
-  __class: Mobility
-  value: Dynamic
 --- !ScreenTransform &43
 name: !<str> ""
 guid: {a: 4768114148339714736, b: 12718750129066560150}
@@ -2110,3 +2080,26 @@ pivot: {x: 0.5, y: 0.5}
 anchors: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
 pixelsPerUnit: 32
 enablePivotMatrix: false
+--- !Transform &44
+name: !<str> ""
+guid: {a: 5238172795898986732, b: 5699113123625585041}
+enabled: true
+localPosition: {x: 0, y: 0, z: 0}
+localScale: {x: 1, y: 1, z: 1}
+localOrientation: {w: 1, x: 0, y: 0, z: 0}
+children:
+  - {localId: 45}
+mobility:
+  __class: Mobility
+  value: Dynamic
+--- !Transform &45
+name: !<str> ""
+guid: {a: 5444856767850669202, b: 748818996944002442}
+enabled: true
+localPosition: {x: 0, y: 0, z: 0}
+localScale: {x: 1, y: 1, z: 1}
+localOrientation: {w: 1, x: 0, y: 0, z: 0}
+parent: {localId: 44}
+mobility:
+  __class: Mobility
+  value: Dynamic
