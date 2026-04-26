@@ -137,9 +137,9 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
         if (this.uiCamera) {
             this.actualCamera = this.uiCamera.getComponent("Camera");
         }
-        if (this.card_object) {
-            this.card_object.enabled = false;
-            const st = this.card_object.getComponent("ScreenTransform");
+        if (this.card_backside) {
+            this.card_backside.enabled = false;
+            const st = this.card_backside.getComponent("ScreenTransform");
             if (st)
                 st.anchoredPosition = this.startPos;
         }
@@ -172,6 +172,15 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
                 this.statArray = this.SPD;
                 break;
         }
+        //make these invisible until they are needed for the animation
+        if (this.card_player_front)
+            this.card_player_front.enabled = false;
+        if (this.card_dealer_front)
+            this.card_dealer_front.enabled = false;
+        if (this.player_poke_sprite)
+            this.player_poke_sprite.enabled = false;
+        if (this.dealer_poke_sprite)
+            this.dealer_poke_sprite.enabled = false;
         this.updateUI();
     }
     updateUI() {
@@ -188,12 +197,12 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
         }
     }
     onUpdate(deltaTime) {
-        if (this.isAnimatingCard && this.card_object && this.currentTargetPos) {
+        if (this.isAnimatingCard && this.card_backside && this.currentTargetPos) {
             this.animTimer += deltaTime;
             const t = Math.min(this.animTimer / this.animDuration, 1.0);
             // Smooth Ease-Out formula
             const easedT = 1 - Math.pow(1 - t, 3);
-            const st = this.card_object.getComponent("ScreenTransform");
+            const st = this.card_backside.getComponent("ScreenTransform");
             if (st) {
                 const currentX = this.startPos.x + (this.currentTargetPos.x - this.startPos.x) * easedT;
                 const currentY = this.startPos.y + (this.currentTargetPos.y - this.startPos.y) * easedT;
@@ -207,10 +216,10 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
     }
     finishAnimation() {
         // Reset for next time
-        const st = this.card_object.getComponent("ScreenTransform");
+        const st = this.card_backside.getComponent("ScreenTransform");
         if (st)
             st.anchoredPosition = this.startPos;
-        this.card_object.enabled = false;
+        this.card_backside.enabled = false;
         if (this.isDealersTurn) {
             this.dealerTurn();
         }
@@ -219,10 +228,10 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
      * Universal helper to start the animation to a specific target
      */
     triggerCardAnimation(target) {
-        if (!this.card_object || this.isAnimatingCard)
+        if (!this.card_backside || this.isAnimatingCard)
             return;
         this.currentTargetPos = target;
-        this.card_object.enabled = true;
+        this.card_backside.enabled = true;
         this.animTimer = 0;
         this.isAnimatingCard = true;
     }
@@ -259,6 +268,13 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
         if (this.isAnimatingCard || this.isDealersTurn)
             return;
         this.triggerCardAnimation(this.final_player);
+        //make card and sprite visible on the first player turn for the animation
+        if (this.card_player_front && this.card_player_front.enabled == false)
+            this.card_player_front.enabled = true;
+        //if (this.card_dealer_front && this.card_dealer_front.enabled == false) this.card_dealer_front.enabled = true;
+        if (this.player_poke_sprite && this.player_poke_sprite.enabled == false)
+            this.player_poke_sprite.enabled = true;
+        //if (this.dealer_poke_sprite && this.dealer_poke_sprite.enabled == false) this.dealer_poke_sprite.enabled = true;
         const dex_num = Math.floor(Math.random() * 151) + 1;
         //this.playerScore =dex_num;
         // Use the player-specific sprite array
@@ -285,6 +301,11 @@ let GameManager = class GameManager extends APJS.BasicScriptComponent {
         if (this.isAnimatingCard)
             return;
         this.checkDealerOutcome();
+        //make card and sprite visible on the first dealer turn for the animation
+        if (this.card_dealer_front && this.card_dealer_front.enabled == false)
+            this.card_dealer_front.enabled = true;
+        if (this.dealer_poke_sprite && this.dealer_poke_sprite.enabled == false)
+            this.dealer_poke_sprite.enabled = true;
         const dex_num = Math.floor(Math.random() * 151) + 1;
         this.dealerScore += this.statArray[dex_num];
         this.triggerCardAnimation(this.final_dealer);
@@ -362,7 +383,15 @@ __decorate([
 __decorate([
     serializeSceneObjectFlag,
     serializeProperty
-], GameManager.prototype, "card_object", void 0);
+], GameManager.prototype, "card_backside", void 0);
+__decorate([
+    serializeSceneObjectFlag,
+    serializeProperty
+], GameManager.prototype, "card_player_front", void 0);
+__decorate([
+    serializeSceneObjectFlag,
+    serializeProperty
+], GameManager.prototype, "card_dealer_front", void 0);
 __decorate([
     serializeProperty
 ], GameManager.prototype, "sprite_array_player", void 0);

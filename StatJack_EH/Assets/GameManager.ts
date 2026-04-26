@@ -96,30 +96,35 @@ private const SPD: number[] = [
 
   // --- Serialized UI Properties ---
   @serializeProperty
-  private button_hit: APJS.SceneObject;
+  private button_hit: APJS.SceneObject; // Reference to the "Hit" button in the scene
   @serializeProperty
-  private button_stand: APJS.SceneObject;
+  private button_stand: APJS.SceneObject; // Reference to the "Stand" button in the scene
   @serializeProperty
-  private text_player: APJS.SceneObject;
+  private text_player: APJS.SceneObject; // Reference to the UI text object that displays player's score
   @serializeProperty
-  private text_dealer: APJS.SceneObject;
+  private text_dealer: APJS.SceneObject; // Reference to the UI text object that displays dealer's score
   @serializeProperty
-  private text_stat: APJS.SceneObject;
+  private text_stat: APJS.SceneObject; // Reference to the UI text object that displays the chosen stat for the game (HP, ATK, etc.)
   @serializeProperty
-  private uiCamera: APJS.SceneObject;
+  private uiCamera: APJS.SceneObject; // Reference to the UI Camera in the scene, used for converting touch positions
 
   @serializeProperty
-  private card_object: APJS.SceneObject;
+  private card_backside: APJS.SceneObject; //image of backside of the playing card used for the draing animation
 
   @serializeProperty
-  private sprite_array_player: APJS.Texture;
+  private card_player_front: APJS.SceneObject; //image of the front of the player's playing card as a background for the pokemon sprite (will be disabled on reset for invisibility)
   @serializeProperty
-  private sprite_array_dealer: APJS.Texture;
+  private card_dealer_front: APJS.SceneObject; //image of the front of the dealer's playing card as a background for the pokemon sprite (will be disabled on reset for invisibility)
 
   @serializeProperty
-  private player_poke_sprite: APJS.SceneObject;
+  private sprite_array_player: APJS.Texture; //texture sequence to display player's drawn pokemon
   @serializeProperty
-  private dealer_poke_sprite: APJS.SceneObject;
+  private sprite_array_dealer: APJS.Texture; //texture sequence to display dealer's drawn pokemon
+
+  @serializeProperty
+  private player_poke_sprite: APJS.SceneObject; //object with image component to show player's drawn pokemon
+  @serializeProperty
+  private dealer_poke_sprite: APJS.SceneObject;  //object with image component to show dealer's drawn pokemon
 
 
   // --- Animation Settings ---
@@ -163,9 +168,9 @@ private const SPD: number[] = [
       this.actualCamera = this.uiCamera.getComponent("Camera") as APJS.Camera;
     }
 
-    if (this.card_object) {
-      this.card_object.enabled = false;
-      const st = this.card_object.getComponent(
+    if (this.card_backside) {
+      this.card_backside.enabled = false;
+      const st = this.card_backside.getComponent(
         "ScreenTransform"
       ) as APJS.ScreenTransform;
       if (st) st.anchoredPosition = this.startPos;
@@ -195,6 +200,13 @@ private const SPD: number[] = [
       case 5: this.statArray = this.SPD; break;
     }
 
+    //make these invisible until they are needed for the animation
+    if (this.card_player_front) this.card_player_front.enabled = false;
+    if (this.card_dealer_front) this.card_dealer_front.enabled = false;
+    if (this.player_poke_sprite) this.player_poke_sprite.enabled = false;
+    if (this.dealer_poke_sprite) this.dealer_poke_sprite.enabled = false;
+
+
     this.updateUI();
   }
 
@@ -216,14 +228,14 @@ private const SPD: number[] = [
 
 
   onUpdate(deltaTime: number) {
-    if (this.isAnimatingCard && this.card_object && this.currentTargetPos) {
+    if (this.isAnimatingCard && this.card_backside && this.currentTargetPos) {
       this.animTimer += deltaTime;
       const t = Math.min(this.animTimer / this.animDuration, 1.0);
 
       // Smooth Ease-Out formula
       const easedT = 1 - Math.pow(1 - t, 3);
 
-      const st = this.card_object.getComponent(
+      const st = this.card_backside.getComponent(
         "ScreenTransform"
       ) as APJS.ScreenTransform;
       if (st) {
@@ -243,11 +255,11 @@ private const SPD: number[] = [
 
   private finishAnimation() {
     // Reset for next time
-    const st = this.card_object.getComponent(
+    const st = this.card_backside.getComponent(
       "ScreenTransform"
     ) as APJS.ScreenTransform;
     if (st) st.anchoredPosition = this.startPos;
-    this.card_object.enabled = false;
+    this.card_backside.enabled = false;
 
       if (this.isDealersTurn) {
         this.dealerTurn();
@@ -258,10 +270,10 @@ private const SPD: number[] = [
    * Universal helper to start the animation to a specific target
    */
   private triggerCardAnimation(target: APJS.Vector2f) {
-    if (!this.card_object || this.isAnimatingCard) return;
+    if (!this.card_backside || this.isAnimatingCard) return;
 
     this.currentTargetPos = target;
-    this.card_object.enabled = true;
+    this.card_backside.enabled = true;
     this.animTimer = 0;
     this.isAnimatingCard = true;
 
@@ -329,6 +341,12 @@ private const SPD: number[] = [
 
     this.triggerCardAnimation(this.final_player);
 
+    //make card and sprite visible on the first player turn for the animation
+    if (this.card_player_front && this.card_player_front.enabled == false) this.card_player_front.enabled = true;
+    //if (this.card_dealer_front && this.card_dealer_front.enabled == false) this.card_dealer_front.enabled = true;
+    if (this.player_poke_sprite && this.player_poke_sprite.enabled == false) this.player_poke_sprite.enabled = true;
+    //if (this.dealer_poke_sprite && this.dealer_poke_sprite.enabled == false) this.dealer_poke_sprite.enabled = true;
+
     const dex_num = Math.floor(Math.random() * 151) + 1;
     //this.playerScore =dex_num;
 
@@ -362,6 +380,11 @@ private const SPD: number[] = [
   private dealerTurn() {
     if (this.isAnimatingCard) return;
     this.checkDealerOutcome();
+
+    //make card and sprite visible on the first dealer turn for the animation
+    if (this.card_dealer_front && this.card_dealer_front.enabled == false) this.card_dealer_front.enabled = true;
+    if (this.dealer_poke_sprite && this.dealer_poke_sprite.enabled == false) this.dealer_poke_sprite.enabled = true;
+
     const dex_num = Math.floor(Math.random() * 151) + 1;
     this.dealerScore += this.statArray[dex_num];
     this.triggerCardAnimation(this.final_dealer);
